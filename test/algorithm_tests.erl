@@ -7,6 +7,7 @@
 
 multiply_test() ->
   [fun() -> {X, Y} = {temp(), temp()},
-    ?assertEqual(X * Y, algorithm:multiply(X, Y)) end() || _ <- lists:seq(1, 50)].
+    ?assertEqual(X * Y,
+      algorithm:multiply(X, Y)) end() || _ <- lists:seq(1, 50)].
 
 temp() -> rand:uniform(trunc(math:pow(2, 1000))).
